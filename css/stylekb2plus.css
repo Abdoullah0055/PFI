@@ -1,0 +1,273 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    margin: auto;
+}
+
+#container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: fit-content auto fit-content;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(53, 108, 156);
+    padding: 20px;
+    color: white;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    width: 100%;
+    padding-top: 10px;
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+}
+
+#nav a:hover {
+    color: #ae6526;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #039955;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+#footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(53, 108, 156);
+    padding: 20px;
+    color: white;
+}
+
+#footer a {
+    color: white;
+}
+
+#main {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    gap: 40px;
+    padding: 20px;
+}
+
+.buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: #039955;
+}
+
+.section-matrix {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.rotated-box {
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    border: 2px solid black;
+    margin: 0 auto 20px auto;
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
+}
+
+.rotated-box-alt {
+    width: 300px;
+    height: 100px;
+    background-color: lightblue;
+    border: 2px solid black;
+    margin: 0 auto;
+    transform: matrix(1, 0, 0.5, 1, 150, 0);
+}
+
+.section-tooltip {
+    text-align: center;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 150px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.resize-box {
+    border: 2px solid #ccc;
+    padding: 10px;
+    width: 300px;
+    resize: vertical;
+    overflow: auto;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 14px;
+    text-align: center;
+}
+
+.resize-box h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.section-animation {
+    text-align: center;
+}
+
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 0 auto;
+    animation: changeColor 3s infinite;
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: yellow;
+    }
+
+    100% {
+        background-color: red;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    #footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    #main {
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .rotated-box,
+    .rotated-box-alt {
+        width: 90%;
+        height: 80px;
+    }
+
+    .tooltip-text {
+        width: 120px;
+    }
+
+    .resize-box {
+        width: 90%;
+    }
+
+    .animated-box {
+        width: 80px;
+        height: 80px;
+    }
+}

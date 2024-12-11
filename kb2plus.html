@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KB2Plus - Tags and CSS Attributes</title>
+    <link rel="stylesheet" href="css/stylekb2plus.css">
+</head>
+
+<body>
+    <header id="header">
+
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="galerie.html">Gallery</a>
+                <a href="horaire.html">Schedule A24</a>
+                <a href="kb2plus.html">KB2+</a>
+                <a href="professions.html">Professions</a>
+                <a href="sujet.html">Topic</a>
+                <a href="sources.html">Sources</a>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <div class="buttons">
+            <button class="nav-button" onclick="document.getElementById('matrix').scrollIntoView()">Matrix()</button>
+            <button class="nav-button" onclick="document.getElementById('tooltip').scrollIntoView()">Tooltip</button>
+            <button class="nav-button" onclick="document.getElementById('resize').scrollIntoView()">Resize Box</button>
+            <button class="nav-button" onclick="document.getElementById('animation').scrollIntoView()">CSS
+                Animation</button>
+        </div>
+        <div id="matrix" class="section-matrix">
+            <h2>Transformation with matrix()</h2>
+            <br>
+            <br>
+            <div class="rotated-box">Box with matrix rotation</div>
+            <div class="rotated-box-alt">Another box with matrix rotation</div>
+            <p>
+                The <b>matrix()</b> method allows combining all 2D transformations into one. This can create complex
+                effects. Here are two examples of its use.
+            </p>
+        </div>
+        <div id="tooltip" class="section-tooltip">
+            <h2>Tooltip Example</h2>
+            <div class="tooltip">Hover over me
+                <span class="tooltip-text">Here's a classic tooltip</span>
+            </div>
+        </div>
+        <div id="resize" class="resize-box">
+            <h2>Resize Box</h2>
+            Resize the box to read the explanation below:
+            <p>
+                The <b>resize</b> property allows resizing of a box based on the options defined. Here, you can adjust
+                the height of this box.
+            </p>
+        </div>
+        <div id="animation" class="section-animation">
+            <h2>CSS Animation</h2>
+            <div class="animated-box">Color animation</div>
+            <p>
+                The <b>animation</b> property in CSS allows defining animations. Here, a box changes color from red to
+                yellow and moves across the screen.
+            </p>
+        </div>
+
+    </main>
+    <footer id="footer">
+        <h5>November 2024</h5>
+        <h5>Abdoullah El Ahmar</h5>
+        <h5><a href="sources.html" target="_blank">Sources</a></h5>
+    </footer>
+</body>
+</html>
